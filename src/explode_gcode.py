@@ -2,7 +2,7 @@ import os
 import sys
 
 # open a gcode file and split it into several files
-gcode_file = '<PATH_TO_FILE>'
+gcode_file = './assets/cubelocal.gcode'
 
 
 def explode_gcode_layers(file):
@@ -11,7 +11,7 @@ def explode_gcode_layers(file):
     with open(gcode_file, 'r') as f:
         layers = 1
         for line in f:
-            layer_file = '/assets/gcode/layer_' + \
+            layer_file = './assets/layers/layer_' + \
                 str('%06d' % layers) + '.gcode'
             with open(layer_file, 'a') as lf:
                 lf.write(line)
